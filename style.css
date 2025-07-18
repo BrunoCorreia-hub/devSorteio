@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    
+}
+
+.caixa-sort{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg,rgba(2, 0, 36, 0.98) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    width: 100%;
+    min-height: 100vh;
+}
+
+.caixa-sort::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle,rgba(0, 0, 0, 0.56) 0%, rgba(0, 0, 0, 0.88) 81%);
+    width: 100%;
+    min-height: 100vh;
+}
+
+.caixa{
+    z-index: 99;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title{
+    font-family: "Bangers", system-ui;
+    font-size: 45px;
+    text-align: center;
+    text-shadow: 2px 3px 5px red;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 15px;
+    -webkit-text-stroke: 0.1px white;
+}
+
+.caixa-input{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    input{
+        width: 250px;
+        padding: 7px 10px;
+        outline: none;
+        border-radius: 5px;
+        font-size: 35px;
+        border: none;      
+    }
+}
+
+.button{
+    margin-top: 25px;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 30px;
+    border: 3px solid transparent;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    text-transform: uppercase;
+    font-family: "Bangers", system-ui;
+    box-shadow: 0 0 6px 3px gray;
+    transition: 0.3s;
+}
+
+.button:hover{
+    background-color: transparent;
+    color: red;
+    transform: scale(1.05);
+}
+
+.button:active{
+    opacity: 0.7;
+}
+
+.result{
+    width: 100%;
+    text-align: center;
+    font-size: 80px;
+    color: #fff;
+    font-weight: bold;
+}
+
+@media (max-width: 1100px){
+
+    .imagem{
+        width: 280px;
+        margin-top: 30px;
+        margin-bottom: -15px;
+    }
+
+    .caixa-input{
+        justify-content: center;
+        width: 100%;
+
+        input{
+            font-size: 30px;
+            width: 90px;
+            height: 60px;
+            padding: 5px;
+            background-color: gray;
+            color: #fff;
+        }
+
+        input::placeholder{
+            font-size: 28px;
+            color: #fff;
+        }
+    }
+
+    .button{
+        width: 100%;
+    }
+
+    .result{
+        font-size: 50px;
+    }
+  }
+
+@media (max-width: 940px) and (orientation: landscape){
+    .caixa-sort{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .caixa{
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .imagem{
+        width: 120px;
+    }
+
+    .title{
+        font-size: 22px;
+    }
+
+    .caixa-input{
+        flex-direction: row;
+
+        input{
+            height: 30px;
+        }
+    }
+
+    .button{
+        height: 35px;
+        padding: 0;
+        font-size: 20px;
+    }
+    .result{
+        margin-top: 10px;
+    }
+} 
+
+@media (max-width: 1400px) and (orientation: landscape){
+    .caixa-sort{
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        height: 100vh;
+    }
+    
+    .imagem{
+        width: 300px;
+    }
+}
+
+@media (max-width: 680px) and (orientation: landscape){
+    .imagem{
+        width: 150px;
+    }
+
+    .result{
+        font-size: 30px;
+    }
+}

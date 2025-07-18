@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css" media="screen" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <title>Dev Sorteio</title>
+</head>
+
+<body>
+    <div class="caixa-sort">
+        <div class="mascara"></div>
+        <div class="caixa">
+            <img src="./img/sort 1.svg" alt="logo-dado" class="imagem" />
+            <h1 class="title">Escolha um Número</h1>
+
+            <div class="caixa-input">
+                <input type="number" id="min" placeholder="entre" />
+                <input type="number" id="max" placeholder="e" />
+            </div>
+            <button class="button" onclick={SortearNumero()}>sortear</button>
+            <p class="result">Resultado</p>
+        </div>
+    </div>
+</body>
+<script>
+
+    function SortearNumero() {
+        const min = Math.ceil(document.getElementById('min').value)
+        const max = Math.floor(document.getElementById('max').value)
+        const paragrafo = document.querySelector(".result")
+
+        const result = Math.floor(Math.random() * (max - min + 1) + min);
+        console.log(result)
+        paragrafo.textContent = result
+    }
+</script>
+
+</html>
+
+<!--#1a1f1e -->
