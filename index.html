@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="/img/sort 1.svg" type="image/png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./style.css" media="screen" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +17,7 @@
         <div class="mascara"></div>
         <div class="caixa">
             <img src="./img/sort 1.svg" alt="logo-dado" class="imagem" />
-            <h1 class="title">Escolha um Número</h1>
+            <h1 class="title">Sortear um Número</h1>
 
             <div class="caixa-input">
                 <input type="number" id="min" placeholder="entre" />
@@ -24,6 +25,7 @@
             </div>
             <button class="button" onclick={SortearNumero()}>sortear</button>
             <p class="result">Resultado</p>
+            <p class="erro"></p>
         </div>
     </div>
 </body>
@@ -33,13 +35,23 @@
         const min = Math.ceil(document.getElementById('min').value)
         const max = Math.floor(document.getElementById('max').value)
         const paragrafo = document.querySelector(".result")
+        const erro = document.querySelector(".erro")
 
-        const result = Math.floor(Math.random() * (max - min + 1) + min);
-        console.log(result)
-        paragrafo.textContent = result
+        if (!min || !max) {
+            paragrafo.style.display = 'none'
+            erro.style.display = 'block'
+            erro.textContent = "Preencha os campos"
+        } else if (min >= max) {
+            paragrafo.style.display = 'none'
+            erro.style.display = 'block'
+            erro.textContent = "Primeiro valor deve ser MENOR que o segundo"
+        } else {
+            const result = Math.floor(Math.random() * (max - min + 1) + min);
+            erro.style.display = 'none'
+            paragrafo.style.display = 'block'
+            paragrafo.textContent = result
+        }
     }
 </script>
 
 </html>
-
-<!--#1a1f1e -->

@@ -99,6 +99,13 @@ body{
     font-weight: bold;
 }
 
+.erro{
+    font-size: 20px;
+    color: red;
+    display: none;
+    padding: 10px;
+}
+
 @media (max-width: 1100px){
 
     .imagem{
